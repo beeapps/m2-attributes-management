@@ -16,9 +16,8 @@ Last Tested on: Magento 2.4.2, PHP 7.1
 
 - Run the upgrade command line:
 ```bash
-bin/compose require m2-attributes-management
+bin/composer require beeapps/attributesmanagement
 bin/magento module:enable Beeapps_AttributesManagement
 bin/magento setup:upgrade
 bin/magento setup:di:compile
-bin/magento cache:clean
 ```
