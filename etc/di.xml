@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Customer attribute.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- From Clarion/CustomerAttribute-->
+    
+    <!-- Define provider class that was used in node dataSource/class -->
+    <virtualType name="CustomerAttributeGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="filterPool" xsi:type="object" shared="false">CustomerAttributeGridFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <!-- collection resolves to standard collection class and filerPool defines new element: -->
+    <!-- This is used for filtering and searching. Used default values for this -->
+    <virtualType name="CustomerAttributeGridFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <!-- Register data source. In this case node name must match the one used in <dataSource /> node 
+    in listing xml and it resolves not to collection but to GridCollection class.-->
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="customer_attribute_listing_data_source" xsi:type="string">Beeapps\AttributesManagement\Model\ResourceModel\Attribute\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Beeapps\AttributesManagement\Model\ResourceModel\Attribute\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">customer_eav_attribute</argument>
+            <argument name="resourceModel" xsi:type="string">Magento\Customer\Model\ResourceModel\Attribute</argument>
+        </arguments>
+    </type>
+    <!-- From Mvn/Cam-->
+    <type name="Beeapps\AttributesManagement\Model\Attribute\Source\CustomerForm">
+        <arguments>
+            <argument name="optionsArray" xsi:type="array">
+                <item name="adminhtml_customer" xsi:type="string" translatable="true">Admin Customer</item>
+                <item name="adminhtml_checkout" xsi:type="string" translatable="true">Admin Checkout</item>
+                <item name="customer_account_create" xsi:type="string" translatable="true">Customer Registration</item>
+                <item name="customer_account_edit" xsi:type="string" translatable="true">Customer Account Edit</item>
+                <item name="checkout_register" xsi:type="string" translatable="true">Checkout Register</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Beeapps\AttributesManagement\Model\Attribute\Source\AddressForm">
+        <arguments>
+            <argument name="optionsArray" xsi:type="array">
+                <item name="adminhtml_customer_address" xsi:type="string" translatable="true">Admin Customer Address</item>
+                <item name="customer_address_edit" xsi:type="string" translatable="true">Customer Account Address</item>
+                <item name="customer_register_address" xsi:type="string" translatable="true">Customer Address Registration</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

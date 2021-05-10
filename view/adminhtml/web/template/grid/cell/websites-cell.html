@@ -1,0 +1,19 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<div class="data-grid-cell-content">
+    <ul data-bind="foreach: { data: $col.getWebsitesGroupedByType($row()), as: '$websites' }">
+        <li>
+            <strong data-bind="text: $websites.type"></strong>
+            <ul data-bind="foreach: { data: $websites.sites, as: '$website' }">
+                <li>
+                    <span data-bind="text: $website.name"></span>
+                    (<span data-bind="text: $website.code"></span>)
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

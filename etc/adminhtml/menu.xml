@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Customer attribute admin menu.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Beeapps_AttributesManagement::attributes"
+             title="Attributes"
+             module="Beeapps_AttributesManagement"
+             sortOrder="200"
+             parent="Magento_Customer::customer"
+             resource="Beeapps_AttributesManagement::attributes"/>
+
+        <add id="Beeapps_AttributesManagement::customer_attributes" 
+               title="Customer Attributes (Clarion)" 
+               module="Beeapps_AttributesManagement" 
+               sortOrder="1" 
+               parent="Beeapps_AttributesManagement::attributes" 
+               action="bam/attribute/index/" 
+               resource="Beeapps_AttributesManagement::customer_attributes"/>
+
+        <add id="Beeapps_AttributesManagement::customer_attributes2"
+             title="Customer Attributes (Mvn)"
+             module="Beeapps_AttributesManagement"
+             sortOrder="5"
+             parent="Beeapps_AttributesManagement::attributes"
+             action="bam/customer/index/"
+             resource="Beeapps_AttributesManagement::customer_attributes"/>
+
+        <add id="Beeapps_AttributesManagement::address_attributes"
+             title="Customer Address Attributes"
+             module="Beeapps_AttributesManagement"
+             sortOrder="10"
+             parent="Beeapps_AttributesManagement::attributes"
+             action="bam/address/index/"
+             resource="Beeapps_AttributesManagement::address_attributes"/>
+    </menu>
+</config>

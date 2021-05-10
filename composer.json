@@ -1,0 +1,25 @@
+{
+    "name": "beeapps/attributesmanagement",
+    "description": "Management of Entities Attributes",
+    "type": "project",
+    "version": "0.1.2",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],  
+    "authors": [
+      {
+        "name": "bergerrc",
+        "email": "developer@beeapps.com.br",
+        "role": "Developer"
+      }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Beeapps\\AttributesManagement\\": ""
+        }
+    }
+}
