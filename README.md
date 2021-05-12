@@ -13,10 +13,13 @@ Last Tested on: Magento 2.4.2, PHP 7.1
 
 ## Installation
 - First add this git repository as a new composer repository in your composer.json
+```
+bin/composer config repositories.beeapps-atrbmngmt git https://github.com/beeapps/m2-attributes-management.git
+```
 
 - Run the upgrade command line:
 ```bash
-bin/composer require beeapps/attributesmanagement
+bin/composer require beeapps/attributesmanagement:"dev-master"
 bin/magento module:enable Beeapps_AttributesManagement
 bin/magento setup:upgrade
 bin/magento setup:di:compile
