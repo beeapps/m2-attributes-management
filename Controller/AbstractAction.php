@@ -1,16 +1,16 @@
 <?php
-
 /**
  * Copyright © 2019 MVN. All rights reserved.
  * See COPYING.txt for license details.
  */
 namespace Beeapps\AttributesManagement\Controller;
 
+use Magento\Backend\App\Action;
 /**
  * Class AbstractAction
  * @package Beeapps\AttributesManagement\Controller
  */
-abstract class AbstractAction extends \Magento\Framework\App\Action\Action
+abstract class AbstractAction extends \Magento\Backend\App\Action
 {
     /**
      * @var \Magento\Framework\Controller\ResultFactory
@@ -24,11 +24,11 @@ abstract class AbstractAction extends \Magento\Framework\App\Action\Action
 
     /**
      * AbstractAction constructor.
-     * @param \Magento\Framework\App\Action\Context $context
+     * @param \Magento\Backend\App\Action\Context $context
      * @param \Beeapps\AttributesManagement\Helper\Data $helper
      */
     public function __construct(
-        \Magento\Framework\App\Action\Context $context,
+        \Magento\Backend\App\Action\Context $context,
         \Beeapps\AttributesManagement\Helper\Data $helper
     ){
         parent::__construct($context);
@@ -46,7 +46,7 @@ abstract class AbstractAction extends \Magento\Framework\App\Action\Action
     }
 
     /**
-     * @return mixed
+     * @return \Magento\Framework\Controller\ResultInterface
      */
     public function createPageResult(){
         $resultPage = $this->resultFactory->create(\Magento\Framework\Controller\ResultFactory::TYPE_PAGE);

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <beeapps_attributesmanagement>
+            <general>
+                <custom_attrib_on_register>1</custom_attrib_on_register>
+            </general>
+        </beeapps_attributesmanagement>
+        <customer>
+            <create_account>
+                <require_address>0</require_address>
+            </create_account>
+        </customer>
+    </default>
+</config>

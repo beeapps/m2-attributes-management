@@ -8,11 +8,12 @@ namespace Beeapps\AttributesManagement\Controller\Adminhtml\Customer;
 
 use Magento\Framework\Controller\Result;
 use Magento\Framework\View\Result\PageFactory;
+use Beeapps\AttributesManagement\Controller\AbstractAction;
 /**
  * Class Attribute
  * @package Beeapps\AttributesManagement\Controller\Adminhtml\Customer
  */
-abstract class Attribute extends \Beeapps\AttributesManagement\Controller\Adminhtml\AbstractAction /*Magento\Backend\App\Action*/
+abstract class Attribute extends \Beeapps\AttributesManagement\Controller\AbstractAction /*Magento\Backend\App\Action*/
 {
     /**
      * Authorization level of a basic admin session

@@ -5,11 +5,12 @@
  */
 namespace Beeapps\AttributesManagement\Controller\Adminhtml\Customer;
 
+use Beeapps\AttributesManagement\Controller\AbstractAction;
 /**
  * Class Index
  * @package Beeapps\AttributesManagement\Controller\Adminhtml\Customer
  */
-class Index extends \Beeapps\AttributesManagement\Controller\Adminhtml\AbstractAction
+class Index extends \Beeapps\AttributesManagement\Controller\AbstractAction
 {
     /**
      * @return \Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface

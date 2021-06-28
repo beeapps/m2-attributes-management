@@ -6,8 +6,17 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceContainer name="form.additional.info">
-            <block class="Magento\Customer\Block\Form\Register" name="custom_customer_attribute_add" template="Beeapps_AttributesManagement::account/register.phtml" />
+        <referenceBlock name="customer_form_register">
+            <action method="setShowAddressFields" ifconfig="customer/create_account/require_address">
+                <argument name="show.address.fields" xsi:type="boolean">true</argument>
+            </action>
+            <container name="fieldset.create.info.additional.address" as="fieldset_create_info_additional_address"/>
+        </referenceBlock>
+        <referenceContainer name="fieldset.create.info.additional">
+            <block class="Magento\Customer\Block\Form\Register" name="custom_customer_attribute_add" template="Beeapps_AttributesManagement::account/register.phtml" before="-" ifconfig="beeapps_attributesmanagement/general/custom_attrib_on_register"/>
+        </referenceContainer>
+        <referenceContainer name="fieldset.create.info.additional.address">
+            <block class="Magento\Customer\Block\Form\Register" name="custom_address_attribute_add" template="Beeapps_AttributesManagement::account/register_address.phtml"/>
         </referenceContainer>
     </body>
 </page>

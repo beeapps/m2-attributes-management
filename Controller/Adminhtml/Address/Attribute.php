@@ -6,11 +6,12 @@
 
 namespace Beeapps\AttributesManagement\Controller\Adminhtml\Address;
 
+use Beeapps\AttributesManagement\Controller\AbstractAction;
 /**
  * Class Attribute
- * @package Beeapps\AttributesManagement\Controller\Adminhtml\Customer
+ * @package Beeapps\AttributesManagement\Controller\Adminhtml\Address
  */
-abstract class Attribute extends \Beeapps\AttributesManagement\Controller\Adminhtml\AbstractAction
+abstract class Attribute extends \Beeapps\AttributesManagement\Controller\AbstractAction
 {
     /**
      * Authorization level of a basic admin session
